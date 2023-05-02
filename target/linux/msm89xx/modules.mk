@@ -62,7 +62,7 @@ define KernelPackage/qcom-remoteproc
          $(LINUX_DIR)/drivers/rpmsg/qcom_glink_smem.ko \
          $(LINUX_DIR)/drivers/misc/fastrpc.ko \
          $(LINUX_DIR)/net/qrtr/qrtr.ko \
-         $(LINUX_DIR)/net/qrtr/ns.ko \
+         $(LINUX_DIR)/net/qrtr/ns.ko@lt6.0 \
          $(LINUX_DIR)/net/qrtr/qrtr-smd.ko \
          $(LINUX_DIR)/net/qrtr/qrtr-tun.ko
   AUTOLOAD:=$(call AutoLoad,20,qcom_common qcom_pil_info qcom_sysmon mdt_loader qcom_memshare qrtr ns qrtr-smd qrtr-tun fastrpc qcom_glink qcom_glink_smem qmi_helpers)
