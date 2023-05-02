@@ -3,7 +3,7 @@
 define KernelPackage/qcom-bluetooth
     SUBMENU:=$(OTHER_MENU)
     TITLE:=Qualcomm SoC built-in bluetooth support
-    DEPENDS:=@TARGET_msm89xx +kmod-bluetooth +qcom-rproc-wcnss
+    DEPENDS:=@TARGET_msm89xx +kmod-bluetooth +kmod-qcom-rproc-wcnss
     KCONFIG:= \
          CONFIG_BT_QCOMSMD \
          CONFIG_BT_HCIUART_QCA=y \
