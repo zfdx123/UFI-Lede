@@ -447,7 +447,7 @@ define KernelPackage/wcn36xx
   $(call KernelPackage/mac80211/Default)
   TITLE:=Qualcomm Atheros WCN3660/3680 support
   URL:=https://wireless.wiki.kernel.org/en/users/drivers/wcn36xx
-  DEPENDS+= @TARGET_msm89xx +kmod-ath +kmod-qcom-wcnss
+  DEPENDS+= @TARGET_msm89xx +kmod-ath +kmod-qcom-rproc-wcnss
   KCONFIG:=CONFIG_WCN36XX
   FILES:=$(PKG_BUILD_DIR)/drivers/net/wireless/ath/wcn36xx/wcn36xx.ko
   AUTOLOAD:=$(call AutoProbe,wcn36xx)

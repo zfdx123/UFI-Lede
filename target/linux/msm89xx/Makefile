@@ -19,7 +19,7 @@ include $(INCLUDE_DIR)/target.mk
 DEFAULT_PACKAGES += partx-utils e2fsprogs mkf2fs
 DEFAULT_PACKAGES += kmod-usb-chipidea kmod-usb-gadget-eth
 DEFAULT_PACKAGES += kmod-rpmsg-wwan-ctrl kmod-bam-dmux
-DEFAULT_PACKAGES += kmod-qcom-remoteproc kmod-qcom-wcnss kmod-qcom-bluetooth kmod-qcom-modem kmod-wcn36xx
+DEFAULT_PACKAGES += kmod-qcom-rproc kmod-qcom-rproc-wcnss kmod-qcom-bluetooth qcom-rproc-modem kmod-wcn36xx
 
 KERNELNAME:=Image
 
