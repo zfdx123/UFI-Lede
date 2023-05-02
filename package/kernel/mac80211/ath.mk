@@ -50,7 +50,6 @@ config-$(call config_package,ath9k-common) += ATH9K_COMMON
 config-$(call config_package,owl-loader) += ATH9K_PCI_NO_EEPROM
 config-$(CONFIG_TARGET_ath79) += ATH9K_AHB
 config-$(CONFIG_TARGET_ipq40xx) += ATH10K_AHB
-config-$(CONFIG_TARGET_msm89xx) += WCN36XX
 config-$(CONFIG_PCI) += ATH9K_PCI
 config-$(CONFIG_ATH_USER_REGD) += ATH_USER_REGD ATH_REG_DYNAMIC_USER_REG_HINTS
 config-$(CONFIG_ATH9K_HWRNG) += ATH9K_HWRNG
@@ -87,6 +86,8 @@ config-$(call config_package,carl9170) += CARL9170
 config-$(call config_package,ar5523) += AR5523
 
 config-$(call config_package,wil6210) += WIL6210
+
+config-$(call config_package,wcn36xx) += WCN36XX
 
 define KernelPackage/ath/config
   if PACKAGE_kmod-ath
@@ -446,14 +447,7 @@ endef
 define KernelPackage/wcn36xx
   $(call KernelPackage/mac80211/Default)
   TITLE:=Qualcomm Atheros WCN3660/3680 support
-  URL:=https://wireless.wiki.kernel.org/en/users/drivers/wcn36xx
-  DEPENDS+= @TARGET_msm89xx +kmod-ath +kmod-qcom-rproc-wcnss
-  KCONFIG:=CONFIG_WCN36XX
+  DEPENDS+= +kmod-mac80211 +kmod-qcom-wcnss
   FILES:=$(PKG_BUILD_DIR)/drivers/net/wireless/ath/wcn36xx/wcn36xx.ko
   AUTOLOAD:=$(call AutoProbe,wcn36xx)
-endef
-
-define KernelPackage/wcn36xx/description
-This module adds support for Qualcomm Atheros WCN3660/3680 Wireless
-blocks in some Qualcomm SoCs
 endef
