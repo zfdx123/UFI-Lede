@@ -33,7 +33,7 @@ define Device/Default
 	IMAGE/system.img := append-rootfs | sparse-img | append-metadata
 	DEVICE_DTS_DIR := ../dts
 	DEVICE_DTS = $$(SOC)_$(1)
-	CMDLINE := "earlycon console=ttyMSM0,115200 rw"
+	CMDLINE := "earlycon console=ttyMSM0,115200 console=tty0 rw"
 endef
 
 include $(SUBTARGET).mk
